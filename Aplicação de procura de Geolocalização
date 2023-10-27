@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Maciel Oliveira">
+    <title>Geolocalizacao</title>
+</head>
+<body>
+    
+
+
+    <script>
+        //Criando Função - Programação Orientada a Função
+        function obterLocalizacao(){
+            if (navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(
+                    function(position){
+                        document.write("Latitude", position.coords.latitude)
+                        document.write("Longitude", position.coords.longitude)
+                        document.write("Altitude", position.coords.altitude)
+                    },
+                    function(error){
+                        console.error("Erro ao Obter")
+                    }
+                );
+            }else{
+                console.log("Geolocalização")
+            
+            }
+        }
+        obterLocalizacao();
+    </script>
+</body>
+</html>
